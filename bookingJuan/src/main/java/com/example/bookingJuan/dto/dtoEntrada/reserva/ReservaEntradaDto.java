@@ -1,4 +1,4 @@
-package com.example.bookingJuan.dto.dtoEntrada;
+package com.example.bookingJuan.dto.dtoEntrada.reserva;
 
 import com.example.bookingJuan.entity.Alumno;
 import com.example.bookingJuan.entity.Clase;
