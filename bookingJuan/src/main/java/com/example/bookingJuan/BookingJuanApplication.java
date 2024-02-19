@@ -7,7 +7,14 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class BookingJuanApplication {
+public class
+
+
+
+
+
+
+BookingJuanApplication {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(BookingJuanApplication.class);
 	public static void main(String[] args) {
