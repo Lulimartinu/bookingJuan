@@ -3,6 +3,9 @@ package com.example.bookingJuan.dto.dtoSalida;
 import com.example.bookingJuan.entity.Alumno;
 import com.example.bookingJuan.entity.Clase;
 
+import javax.persistence.Entity;
+
+@Entity
 public class ReservaSalidaDto {
     private Long id;
     private Clase clase;
