@@ -1,12 +1,25 @@
 package com.example.bookingJuan.entity;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "PROFESOR")
 public class Profesor {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(length = 50)
     private String nombre;
+    @Column(length = 10)
     private int dni;
+    @Column(length = 12)
     private int telefono;
+    @Column(length = 50)
     private String mail;
+    @Column(length = 10)
     private String contrasena;
+    @Column(length = 50)
     private String especialidad;
 
     public Profesor() {

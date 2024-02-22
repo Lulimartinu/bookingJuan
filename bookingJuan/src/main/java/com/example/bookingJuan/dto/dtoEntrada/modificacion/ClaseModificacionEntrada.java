@@ -1,10 +1,11 @@
 package com.example.bookingJuan.dto.dtoEntrada.modificacion;
 
 import com.example.bookingJuan.entity.Profesor;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
-
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class ClaseModificacionEntrada {
     @NotNull
     private Long id;

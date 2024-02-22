@@ -2,13 +2,14 @@ package com.example.bookingJuan.dto.dtoEntrada.clase;
 
 import com.example.bookingJuan.entity.Profesor;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.validation.constraints.FutureOrPresent;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
-
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class ClaseEntradaDto {
     @NotBlank(message = "La clase debe tener nombre")
     @NotNull(message = "El nombre de la clase no puede ser nulo")

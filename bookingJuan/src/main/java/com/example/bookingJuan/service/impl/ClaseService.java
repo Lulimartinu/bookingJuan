@@ -12,12 +12,14 @@ import com.example.bookingJuan.exceptions.BadRequestException;
 import com.example.bookingJuan.exceptions.ResourceNotFoundException;
 import com.example.bookingJuan.repository.ClaseRepository;
 import com.example.bookingJuan.service.IClaseService;
+import org.hibernate.validator.internal.util.stereotypes.Lazy;
 import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class ClaseService implements IClaseService {
 
     private final Logger LOGGER = LoggerFactory.getLogger(ReservaService.class);
@@ -25,7 +27,7 @@ public class ClaseService implements IClaseService {
     private final ModelMapper modelMapper;
     private Profesor profesor;
 
-    public ClaseService(ClaseRepository claseRepository, ModelMapper modelMapper, Profesor profesor) {
+    public ClaseService(ClaseRepository claseRepository, ModelMapper modelMapper) {
         this.claseRepository = claseRepository;
         this.modelMapper = modelMapper;
         this.profesor = profesor;

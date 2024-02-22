@@ -2,9 +2,10 @@ package com.example.bookingJuan.dto.dtoEntrada.reserva;
 
 import com.example.bookingJuan.entity.Alumno;
 import com.example.bookingJuan.entity.Clase;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.validation.constraints.NotNull;
-
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class ReservaEntradaDto {
     @NotNull(message = "Debe seleccionar una clase")
     private Long claseId;

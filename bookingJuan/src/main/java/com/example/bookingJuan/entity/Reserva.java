@@ -1,8 +1,18 @@
 package com.example.bookingJuan.entity;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "RESERVA")
 public class Reserva {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @ManyToOne
+    @JoinColumn(name = "clase_id")
     private Clase clase;
+    @ManyToOne
+    @JoinColumn(name = "alumno_id")
     private Alumno alumno;
 
     public Reserva() {

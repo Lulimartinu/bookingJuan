@@ -1,7 +1,9 @@
 package com.example.bookingJuan.dto.dtoEntrada.modificacion;
 
-import javax.validation.constraints.NotNull;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import javax.validation.constraints.NotNull;
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class ProfesorModificacionEntrada {
     @NotNull()
     private Long id;
