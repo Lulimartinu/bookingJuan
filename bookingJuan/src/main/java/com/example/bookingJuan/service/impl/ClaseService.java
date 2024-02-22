@@ -48,12 +48,28 @@ public class ClaseService implements IClaseService {
 
     @Override
     public void eliminarClasePorId(Long id) throws ResourceNotFoundException {
+        if (buscarClasePorId(id) != null){
+            claseRepository.deleteById(id);
+            LOGGER.warn("Se ha eliminado la clase con el id " + id);
+        }
+        else{
+            LOGGER.error("no se ha encontrado una clase con el id " + id + " en la BDD");
+        }
 
     }
 
     @Override
     public ClaseSalidaDto buscarClasePorId(Long id) throws ResourceNotFoundException {
-        return null;
+        Clase claseBuscada = claseRepository.findById(id).orElse(null);
+        ClaseSalidaDto claseSalidaDto = null;
+        if (claseBuscada != null) {
+            claseSalidaDto = entidadAClaseSalidaDto(claseBuscada);
+            LOGGER.info("se ha encontrado en la BDD la clase ", claseSalidaDto);
+        } else {
+            LOGGER.error("No se ha encontrado en la BDD una clase con ese id " + id);
+        }
+        return claseSalidaDto;
+
     }
 
     @Override
